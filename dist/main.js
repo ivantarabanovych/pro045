@@ -1,16 +1,8 @@
 "use strict";
-function getStatus(status) {
-    switch (status) {
-        case "success":
-            return "Operation completed successfully.";
-        case "error":
-            return "An error occurred during the operation.";
-        case "pending":
-            return "The operation is still pending.";
-        default:
-            return "Unknown status.";
-    }
+var student = ["ivan", 85.7];
+function displayStudentInfo(student) {
+    var name = student[0], grade = student[1];
+    console.log("Student name: ".concat(name));
+    console.log("Average Grade: ".concat(grade));
 }
-console.log(getStatus("success"));
-console.log(getStatus("error"));
-console.log(getStatus("pending"));
+displayStudentInfo(student);

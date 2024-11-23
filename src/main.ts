@@ -1,17 +1,9 @@
-function getStatus(status: "success" | "error" | "pending"): string {
-    switch(status){
-        case "success":
-            return "Operation completed successfully.";
-        case "error":
-            return "An error occurred during the operation.";
-        case "pending":
-            return "The operation is still pending.";
-        default:
-            return "Unknown status."
-    }
+const student: [string, number] = ["ivan", 85.7];
+
+function displayStudentInfo(student: [string,number]): void{
+    const [name, grade] = student;
+    console.log(`Student name: ${name}`);
+    console.log(`Average Grade: ${grade}`);
 }
 
-console.log(getStatus("success"));
-console.log(getStatus("error"));
-console.log(getStatus("pending"));
-
+displayStudentInfo(student);
