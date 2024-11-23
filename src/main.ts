@@ -1,9 +1,24 @@
-const student: [string, number] = ["ivan", 85.7];
-
-function displayStudentInfo(student: [string,number]): void{
-    const [name, grade] = student;
-    console.log(`Student name: ${name}`);
-    console.log(`Average Grade: ${grade}`);
+enum OrderStatus {
+    Pending = "Pendeng",
+    Shipped = "Shipped",
+    Delivered = "Delivered",
+    Cencelled = "Cancelled"
 }
 
-displayStudentInfo(student);
+function getOrderStatusMessage(status: OrderStatus): string{
+    switch(status){
+        case OrderStatus.Pending:
+            return "Ваше замовдення в обробці";
+        case OrderStatus.Shipped:
+            return "Ваше замовлення відправлено";
+        case OrderStatus.Delivered:
+            return "Ваше замовлення доставлено";
+        case OrderStatus.Cencelled:
+            return "Ваше замовлення доставлено";
+        default:
+            return "Невідомий статус замовлення";
+    }
+}
+
+const oderStatus: OrderStatus = OrderStatus.Shipped; 
+console.log(getOrderStatusMessage(oderStatus));

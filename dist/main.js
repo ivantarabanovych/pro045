@@ -1,8 +1,24 @@
 "use strict";
-var student = ["ivan", 85.7];
-function displayStudentInfo(student) {
-    var name = student[0], grade = student[1];
-    console.log("Student name: ".concat(name));
-    console.log("Average Grade: ".concat(grade));
+var OrderStatus;
+(function (OrderStatus) {
+    OrderStatus["Pending"] = "Pendeng";
+    OrderStatus["Shipped"] = "Shipped";
+    OrderStatus["Delivered"] = "Delivered";
+    OrderStatus["Cencelled"] = "Cancelled";
+})(OrderStatus || (OrderStatus = {}));
+function getOrderStatusMessage(status) {
+    switch (status) {
+        case OrderStatus.Pending:
+            return "Ваше замовдення в обробці";
+        case OrderStatus.Shipped:
+            return "Ваше замовлення відправлено";
+        case OrderStatus.Delivered:
+            return "Ваше замовлення доставлено";
+        case OrderStatus.Cencelled:
+            return "Ваше замовлення доставлено";
+        default:
+            return "Невідомий статус замовлення";
+    }
 }
-displayStudentInfo(student);
+var status = OrderStatus.Shipped;
+console.log(getOrderStatusMessage(status));
