@@ -1,11 +1,16 @@
 "use strict";
-var user = {
-    id: 1,
-    name: "Ivan",
-    email: "ivanribak@gmail.com",
-    age: 25
-};
-function printUserInfo(user) {
-    console.log("User info: \n        ID: ".concat(user.id, "\n        Name: ").concat(user.name, "\n        Email: ").concat(user.email, "\n        Age: ").concat(user.age !== null ? user.age : "Not provided", "\n        "));
+function getStatus(status) {
+    switch (status) {
+        case "success":
+            return "Operation completed successfully.";
+        case "error":
+            return "An error occurred during the operation.";
+        case "pending":
+            return "The operation is still pending.";
+        default:
+            return "Unknown status.";
+    }
 }
-printUserInfo(user);
+console.log(getStatus("success"));
+console.log(getStatus("error"));
+console.log(getStatus("pending"));
